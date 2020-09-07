@@ -10133,38 +10133,3 @@ section.resume-section .resume-section-content {
     padding-bottom: 5rem;
   }
 }
-.project1 .project1-name{
-  color:#fff;
-  display:none;
-}
-.project1-link{
-  font-size: .8rem;
-  margin-top: 50%;
-  background-color:#007bff!important;
-  border:1px solid #007bff!important;
-  display:none;
-}
-.project1{
-  width:100%;
-  background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url('../assets/img/easy-garage.png');
-  height:300px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-radius: 5px;
-}
-.project1:hover{
-  width:100%;
-  background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url('../assets/img/easy-garage.png');
-  height:300px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-radius: 5px;
-}
-.project1:hover .project1-link{
-  display:inline;
-}
-.project1:hover .project1-name{
-  display:inline;
-}
