@@ -181,6 +181,14 @@
       transform: translateX(10px);
     }
 
+    ul ul {
+      padding-left: 1.5rem;
+    }
+
+    ul ul li::before {
+      content: '◦';
+    }
+
     .experience h3,
     .education h3,
     .projects h3 {
@@ -298,7 +306,6 @@
       background: #d0c7ff;
     }
 
-    /* App Drawer Button */
     .app-drawer-btn {
       position: fixed;
       bottom: 15px;
@@ -333,7 +340,6 @@
       background: #d0c7ff;
     }
 
-    /* Navigation Popup */
     .nav-popup {
       position: fixed;
       bottom: 60px;
@@ -392,7 +398,6 @@
       color: #ffeb3b;
     }
 
-    /* Objective Section for Mobile */
     .objective p {
       position: relative;
       z-index: 5;
@@ -400,7 +405,6 @@
       line-height: 1.7;
     }
 
-    /* Rough Notation Adjustments */
     .rough-notation {
       z-index: 1 !important;
     }
@@ -466,7 +470,6 @@
         font-size: 16px;
       }
 
-      /* Rough Notation Mobile Fixes */
       .rough-notation-highlight {
         padding: 2px !important;
         margin: -2px !important;
@@ -522,7 +525,6 @@
     section:nth-child(3) { --section-order: 3; }
     section:nth-child(4) { --section-order: 4; }
     section:nth-child(5) { --section-order: 5; }
-    section:nth-child(6) { --section-order: 6; }
   </style>
 </head>
 <body>
@@ -540,7 +542,6 @@
       <li><a href="#projects">Projects</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#interests">Interests</a></li>
-      <li><a href="#references">References</a></li>
     </ul>
   </nav>
   <header>
@@ -574,44 +575,98 @@
 
     <section class="experience" id="experience">
       <h2>Experience</h2>
-      <h3>Bitz IT Consulting, Mombasa Rd, Nairobi (July 2023 - Present)</h3>
+      <h3>Terra Softworks, Mayfair Business Centre, Westlands Area, Nairobi – Senior Software Engineer, Full-time (Feb 2024 – Ongoing)</h3>
       <ul>
-        <li>Collaborated in crafting technical proposals, outlining requirements, feasibility, and cost estimates.</li>
-        <li>Conducted code reviews to ensure adherence to coding standards and provided feedback for improvement.</li>
-        <li>Developed project prototypes using PHP and Laravel to showcase viability and innovation.</li>
-        <li>Contributed to an Electronic Document Management System, enhancing document accessibility and workflow efficiency.</li>
+        <li><strong>Code Optimization & System Performance:</strong> Conducted comprehensive bug fixes and implemented performance improvements, leveraging memory caching and eager loading to streamline database queries. Refactored code into modular services, reducing memory usage and preventing memory leaks. Migrated to Redis caching from database caching, significantly improving data access speed and enhancing system responsiveness.</li>
+        <li><strong>Bulk Messaging Module:</strong>
+          <ul>
+            <li>Developed an efficient bulk messaging module that allowed users to send personalized SMS messages by dynamically inserting variables.</li>
+            <li>Configured multi-SMS vendor support, batching messages to reduce server load with a controlled delay to optimize performance and prevent API overload.</li>
+          </ul>
+        </li>
+        <li><strong>Efficient Data Filtering:</strong> Designed optimized data filters to handle large datasets with minimal query load, enhancing data retrieval speed and reducing server strain.</li>
+        <li><strong>KYC Module Implementation:</strong> Integrated Smile Identity APIs for automated identity verification, ensuring secure and reliable user authentication within the platform's KYC workflow.</li>
+        <li><strong>Enhanced Data Exports:</strong> Developed efficient PDF and Excel data export features using Laravel Simple Excel and wkhtmltopdf, reducing the risk of server overload during large exports and enhancing user accessibility to bulk data.</li>
+        <li><strong>Voucher Issuing & Redemption Module:</strong> Created a voucher management system integrated into the wallet platform, supporting issuance, tracking, and consumption of vouchers.</li>
+        <li><strong>Comprehensive M-Pesa Integration:</strong>
+          <ul>
+            <li><strong>Bulk Payouts:</strong> Implemented M-Pesa B2C payouts via file uploads, with data validation and batch processing for secure and efficient transactions.</li>
+            <li><strong>Account Top-Ups:</strong> Enabled top-ups from users' M-Pesa Paybill accounts to the platform’s payout accounts, ensuring continuous funding.</li>
+            <li><strong>Inter-Account Transfers:</strong> Developed secure fund transfer functionality between working and utility accounts within the M-Pesa Paybill system.</li>
+          </ul>
+        </li>
+        <li><strong>Enhanced Job Management with Laravel Horizon:</strong> Migrated from PHP/Laravel job workers to Laravel Horizon, providing real-time visibility and control over job queues, improving system monitoring and reliability.</li>
+        <li><strong>Administrative Dashboard Development:</strong>
+          <ul>
+            <li>Built a comprehensive administrative dashboard with Vue.js 3, Inertia.js, and Laravel, providing internal management tools within a Docker environment for scalable deployment.</li>
+            <li><strong>Role-Based Access Control:</strong> Developed a granular permission and roles system to restrict access to sensitive data and functionality based on staff roles.</li>
+            <li><strong>Audit Logging:</strong> Implemented a system-wide audit log to capture all database changes, associating each change with a user for accountability. This logging was offloaded to a separate database for optimal performance.</li>
+            <li><strong>System Log Viewer:</strong> Developed a log viewer on the dashboard to track errors, warnings, and informational logs across both sandbox and production environments.</li>
+            <li><strong>Database Connection Switcher:</strong> Added functionality for admins to instantly switch database connections between sandbox and live environments, facilitating testing and troubleshooting.</li>
+            <li><strong>Client Onboarding Workflow:</strong> Created an onboarding workflow for new clients, including information collection and secure document storage via DigitalOcean Spaces.</li>
+          </ul>
+        </li>
+        <li><strong>USSD Platform Optimization:</strong> Transformed logic from traditional switch-case to simplified infinite state machine, reducing session timeouts and improving the speed of USSD responses. Introduced Redis caching to keep session data readily accessible and enabled customizable USSD options for end-users.</li>
+        <li><strong>PHPUnit Test Development & Automation:</strong>
+          <ul>
+            <li>Designed and implemented unit and feature tests using PHPUnit to ensure code reliability and maintainability.</li>
+            <li>Developed test cases for core platform functionalities and all API endpoints.</li>
+            <li>Automated test execution within CI/CD pipelines to catch regressions early and maintain software integrity.</li>
+          </ul>
+        </li>
+        <li><strong>Developer Training & Mentorship:</strong> Onboarded new developers, facilitating setup and guiding them through platform architecture and best practices for a smooth transition into the team.</li>
+        <li><strong>Technologies:</strong> PHP, Laravel, Vue.js 3, TypeScript, Python, SQL, Blade, Inertia.js, Redis, Docker, DigitalOcean</li>
       </ul>
-      <h3>Terra Softworks, Mayfair Business Centre, Nairobi (Nov 2023 – Dec 2023)</h3>
+      <h3>Terra Softworks, Mayfair Business Centre, Westlands Area, Nairobi – Software Developer, Part-time (Nov 2023 – Dec 2023)</h3>
       <ul>
-        <li>Debugged HalfPricedBooks.co.ke e-commerce website to enhance functionality.</li>
-        <li>Integrated M-Pesa and PesaPal payment systems seamlessly.</li>
-        <li>Optimized user journey from browsing to purchasing with user-friendly features.</li>
-        <li>Managed data migration and deployed the website to the production server.</li>
+        <li>Debugged the HalfPricedBooks.co.ke e-commerce website to enhance functionality and resolve issues.</li>
+        <li>Integrated M-Pesa and PesaPal payment systems seamlessly into the existing system.</li>
+        <li>Ensured a smooth user journey from browsing to purchasing by implementing user-friendly features and optimizing the overall purchasing process.</li>
+        <li>Executed the migration of data from the previous website to the new one, overseeing the entire process.</li>
+        <li>Successfully deployed both the previous website's data and the new website to the production server, ensuring a stable and efficient online platform.</li>
       </ul>
-      <h3>Optica, Optica House, Nairobi (Feb 2023 – June 2023)</h3>
+      <h3>Bitz IT Consulting, Mombasa Rd, Nairobi – Software Developer, Part-time (July 2023 – May 2024)</h3>
       <ul>
-        <li>Fetched and filtered data from SAP database using Python, Pandas, and Excel.</li>
-        <li>Analyzed patterns and trends for business diagnosis and prediction.</li>
-        <li>Provided efficiency reports for departments and supported SAP IT error correction.</li>
+        <li><strong>Technical Proposal Creation:</strong> Collaborated in crafting comprehensive technical proposals for innovative projects, outlining technical requirements, feasibility, and cost estimates. Assisted in defining project scopes, objectives, and deliverables, contributing to successful project acquisition.</li>
+        <li><strong>Code Review:</strong> Conducted rigorous code reviews for fellow developers, ensuring adherence to coding standards and best practices. Provided constructive feedback to improve code quality, fostering a culture of continuous improvement.</li>
+        <li><strong>Project Prototyping (PHP with Laravel Framework):</strong> Leveraged the power of PHP and the Laravel framework to rapidly develop and showcase project viability and innovation potential. Spearheaded project prototyping, rapidly transforming concepts into functional prototypes.</li>
+        <li><strong>Electronic Document Management System (EDMS) Development:</strong> Contributed to the development of an Electronic Document Management System (EDMS), a critical solution for streamlined document handling and organization. Collaborated with cross-functional teams to design and implement robust features, enhancing document accessibility, security, and workflow efficiency.</li>
       </ul>
-      <h3>PAC Chemical Paints Limited, Nairobi (Jan 2023)</h3>
+      <h3>Optica, Optica House, Moi Avenue, Nairobi – Data Analyst (Feb 2023 – June 2023)</h3>
       <ul>
-        <li>Developed and deployed an informational website using HTML, CSS, Bootstrap, and JavaScript.</li>
+        <li>Fetched data from SAP database, filtered data using Python, Pandas, and Excel.</li>
+        <li>Used statistical tools to identify, analyze, and interpret patterns and trends in datasets, helpful for diagnosis and prediction.</li>
+        <li>Assigned numerical and time values to essential business functions to assess and compare business performance over periods of time.</li>
+        <li>Provided efficiency reports on various departments and their tasks.</li>
+        <li>Supported SAP IT on matters of error correction and integration.</li>
       </ul>
-      <h3>Twiga Chemical Industries Limited, Nairobi (Aug 2022 – Dec 2022)</h3>
+      <h3>PAC Chemical Paints Limited, Temple Rd, Nairobi – Software Engineer (Jan 2023)</h3>
       <ul>
-        <li>Developed a custom CRM system using C#, Razor Pages, JavaScript, SQL Server, and NoSQL.</li>
-        <li>Prepared project specifications, performed testing, and documented resolutions.</li>
-        <li>Collaborated with product managers to define minimal viable products and user stories.</li>
+        <li>Developed and deployed an informational website.</li>
+        <li>Implemented structure using HTML, used CSS and Bootstrap for color and aesthetics, and JavaScript for responsiveness.</li>
       </ul>
-      <h3>Twiga Chemical Industries Limited, Nairobi (Apr 2022 – July 2022)</h3>
+      <h3>Twiga Chemical Industries Limited, Nanyuki Rd, Nairobi – Software Engineer (Aug 2022 – Dec 2022)</h3>
       <ul>
-        <li>Maintained staff computers and servers, including SAP and Windows troubleshooting.</li>
-        <li>Set up Google Forms for recording field data.</li>
+        <li>Worked on a custom Customer Relationship Management (CRM) system.</li>
+        <li>Prepared detailed reports concerning project specifications and activities.</li>
+        <li>Performed all testing and troubleshooting methods and documented resolutions in the system.</li>
+        <li>Worked with and developed applications using C#, Razor Pages, JavaScript, SQL Server, and NoSQL, as well as worked on troubleshooting methods and documented solutions.</li>
+        <li>Consulted with the product manager to identify minimal viable product and decomposed feature set into small-scoped user stories.</li>
+        <li>Planned the delivery for new requirements and estimated feasibility performance analysis against the current system.</li>
       </ul>
-      <h3>Jenmwa Enterprises Limited, Nairobi (Mar 2020 – Feb 2022)</h3>
+      <h3>Twiga Chemical Industries Limited, Nanyuki Rd, Nairobi – IT Intern (Apr 2022 – July 2022)</h3>
       <ul>
-        <li>Developed an Inventory Management System using Laravel, Blade Templates, and MySQL, with accounting features.</li>
+        <li>Performed maintenance on staff computers by wiping, dusting, and blowing the machines.</li>
+        <li>Participated in maintenance on software, server, and network server.</li>
+        <li>Installed and troubleshot SAP, Microsoft Office Suite, and Windows Operating System.</li>
+        <li>Maintained and replaced printer cartridges.</li>
+        <li>Created setup for Google Forms for recording field data.</li>
+      </ul>
+      <h3>Jenmwa Enterprises Limited, Lunga Lunga Rd, Nairobi – Software Engineer (Mar 2020 – Feb 2022)</h3>
+      <ul>
+        <li>Developed an Inventory Management System.</li>
+        <li>Built the system using Laravel, Blade Templates, and MySQL database.</li>
+        <li>The project included accounting requirements.</li>
       </ul>
     </section>
 
@@ -635,51 +690,53 @@
     </section>
 
     <section class="projects" id="projects">
-      <h2>Projects</h2>
-      <h3>Easy Issue</h3>
+      <h2>Academic Projects</h2>
+      <h3>University E-Learning Tutorial and School Photo Gallery Web Application API</h3>
       <ul>
-        <li>A web application for project organization inspired by Agile methodology, allowing admins to create projects and managers to assign tickets.</li>
-        <li>Built with Laravel (backend), Vue.js (frontend), and Bootstrap.</li>
-        <li><a href="http://easy-issue.herokuapp.com/" target="_blank">View live</a></li>
+        <li>During Final Year Studies, participated in building a web application with the purpose of training new students and staff on the use of the E-Learning System.</li>
+        <li>It worked by showing videos and links to videos that guided new users on how to navigate and use the E-Learning system.</li>
+        <li>It also had a module where pictures taken during university events could be uploaded and viewed by students and staff like a picture gallery.</li>
+        <li>Built the back-end API of the system using PHP Laravel and Laravel Sanctum for authentication system access by the front end.</li>
       </ul>
-      <h3>Easy Garage</h3>
+      <h3>Software Engineering Student Projects Crowd Funding – Final Project</h3>
       <ul>
-        <li>A web application for registering vehicles for maintenance and repair services.</li>
-        <li>Built with PHP (backend) and Bootstrap (styling).</li>
-        <li><a href="http://easy-garage.herokuapp.com/" target="_blank">View live</a></li>
-      </ul>
-      <h3>University E-Learning Tutorial and Photo Gallery</h3>
-      <ul>
-        <li>A web application to train new students and staff on the E-Learning system, with a photo gallery for university events.</li>
-        <li>Built the backend API using PHP Laravel and Laravel Sanctum for authentication.</li>
-      </ul>
-      <h3>Software Engineering Student Projects Crowd Funding</h3>
-      <ul>
-        <li>A blockchain-based crowdfunding system to support software engineering students.</li>
-        <li>Features multiple servers for integrity and security, developed in C# and .NET with P2P connectivity.</li>
+        <li>For my Senior Year Final Project, proposed and built a custom blockchain system for crowdfunding to aid software engineering students in the university to get financial support from peers and alumni.</li>
+        <li>It features multiple servers that anyone could run to help maintain the integrity and security of the system.</li>
+        <li>It is web-based, has a P2P connection developed in C# and .NET.</li>
       </ul>
     </section>
 
     <section class="skills" id="skills">
       <h2>Skills</h2>
       <div>
-        <span>PHP</span><span>C#</span><span>JavaScript</span><span>HTML</span><span>CSS</span><span>Python</span><span>SQL</span>
-        <span>Java</span><span>Laravel</span><span>ASP .NET</span><span>Vue.js</span><span>MySQL</span>
-        <span>Visual Studio</span><span>SSMS</span><span>IIS Manager</span><span>Linux</span>
+        <span>PHP</span>
+        <span>C#</span>
+        <span>JavaScript</span>
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>Python</span>
+        <span>SQL</span>
+        <span>Java</span>
+        <span>TypeScript</span>
+        <span>Laravel</span>
+        <span>ASP .NET</span>
+        <span>Vue.js 3</span>
+        <span>MySQL</span>
+        <span>Blade</span>
+        <span>Inertia.js</span>
+        <span>Redis</span>
+        <span>Docker</span>
+        <span>DigitalOcean</span>
+        <span>Visual Studio</span>
+        <span>SSMS</span>
+        <span>IIS Manager</span>
+        <span>Linux</span>
       </div>
     </section>
 
     <section class="interests" id="interests">
       <h2>Interests</h2>
       <p>Computer gaming, nature walks, exploring machine learning, and venturing into robotics.</p>
-    </section>
-
-    <section class="references" id="references">
-      <h2>References</h2>
-      <ul>
-        <li>James Mwangi – Factory Manager, Twiga Chemical Industries Limited, P.O Box 30172 00100, Nairobi, +254721759288</li>
-        <li>Edwin Wanderi – Director, Jenmwa Enterprises, P.O Box 52959 – 00200, Nairobi, +254708295254</li>
-      </ul>
     </section>
   </main>
 
@@ -688,7 +745,6 @@
   </footer>
 
   <script>
-    // Theme toggle
     const toggleButton = document.querySelector('.theme-toggle');
     const body = document.body;
     const icon = toggleButton.querySelector('.icon');
@@ -700,7 +756,6 @@
       });
     }
 
-    // App Drawer Button and Navigation Popup
     const appDrawerBtn = document.querySelector('.app-drawer-btn');
     const navPopup = document.querySelector('.nav-popup');
 
@@ -711,14 +766,12 @@
       });
     }
 
-    // Close popup when clicking outside
     document.addEventListener('click', (e) => {
       if (navPopup && appDrawerBtn && !navPopup.contains(e.target) && !appDrawerBtn.contains(e.target)) {
         navPopup.classList.remove('open');
       }
     });
 
-    // Smooth scroll for navigation links
     document.querySelectorAll('.nav-popup a').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -731,7 +784,6 @@
       });
     });
 
-    // Typing effect
     const titleText = document.querySelector('#title-text');
     const subtitleText = document.querySelector('#subtitle-text');
     const title = 'Simon Peter Kimani Chege';
@@ -787,7 +839,6 @@
       }
     });
 
-    // Rough Notation setup for Objective section
     const highlight = document.querySelector('#highlight-annotation');
     const goalOriented = document.querySelector('#goal-oriented-annotation');
     const selfMotivated = document.querySelector('#self-motivated-annotation');
